@@ -1,12 +1,15 @@
 import React from 'react'
 import Footer from '../components/footer'
+import Header from '../components/header'
 
 const MenuPage = () => {
     return (
         <div>
             <div>
+                <Header />
+            </div>
+            <div>
                 <h1>Menu</h1>
-                <a href="../">Go back!</a>
             </div>
             <div>
                 <Footer />
