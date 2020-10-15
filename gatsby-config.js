@@ -7,5 +7,7 @@
 module.exports = {
   /* Your site config here */
   pathPrefix: "/InThePocket",
-  plugins: [],
+  plugins: [
+    'gatsby-plugin-sass'
+  ],
 }
