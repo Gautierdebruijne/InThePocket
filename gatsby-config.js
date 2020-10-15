@@ -7,11 +7,19 @@
 module.exports = {
   /* Your site config here */
   pathPrefix: "/InThePocket",
-  siteMetaData: {
+  siteMetadata: {
     title: "In The Pocket",
     author: "Gautier de Bruijne"
   },
   plugins: [
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`
+      }
+    }
+    
   ],
 }

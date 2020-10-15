@@ -5,7 +5,7 @@ const Footer = () => {
     const data = useStaticQuery(graphql`
         query{
             site{
-                siteMetaData{
+                siteMetadata{
                     author
                 }
             }
@@ -14,7 +14,7 @@ const Footer = () => {
 
     return(
         <footer>
-            <p>Created by {data.site.siteMetaData.author}, © 2020<br></br>
+            <p>Created by {data.site.siteMetadata.author}, © 2020<br></br>
             Have a look at my <a href="https://gautierdebr.be">website</a>!</p>
         </footer>
     )
