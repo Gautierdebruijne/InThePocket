@@ -1,19 +1,14 @@
 import React from 'react'
-import Footer from '../components/footer'
-import Header from '../components/header'
+import Layout from '../components/layout'
 
 const MenuPage = () => {
     return (
         <div>
-            <div>
-                <Header />
-            </div>
-            <div>
-                <h1>Menu</h1>
-            </div>
-            <div>
-                <Footer />
-            </div>
+            <Layout>
+                <div>
+                    <h1>Menu</h1>
+                </div>
+            </Layout>
         </div>
     )
 }
