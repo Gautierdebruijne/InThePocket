@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import Head from "../components/head"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -29,6 +30,7 @@ const Menu = (props) => {
 
     return (
         <Layout>
+            <Head title={props.data.contentfulMenuItem.title}/>
             <h1>{props.data.contentfulMenuItem.title}</h1>
             <p>{props.data.contentfulMenuItem.date}</p>
             {documentToReactComponents(props.data.contentfulMenuItem.body.json, options)}

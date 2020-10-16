@@ -12,6 +12,7 @@ module.exports = {
     author: "Gautier de Bruijne"
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
       options: {

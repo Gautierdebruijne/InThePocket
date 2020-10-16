@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import {Link, graphql, useStaticQuery } from "gatsby"
 import menuStyle from "./menu.module.scss"
+import Head from "../components/head"
 
 const MenuPage = () => {
     const data = useStaticQuery(graphql`
@@ -24,6 +25,7 @@ const MenuPage = () => {
     return (
         <div>
             <Layout>
+                <Head title="Menu"/>
                 <h1>Menu</h1>
                 <ol className={menuStyle.recipes}>
                     {data.allContentfulMenuItem.edges.map((edge) => {
