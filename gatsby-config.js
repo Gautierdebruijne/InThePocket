@@ -12,6 +12,13 @@ module.exports = {
     author: "Gautier de Bruijne"
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'ctpums873pqo',
+        accessToken: 'aGtTTpqjLzJUm4xucUvtH4nSiZ_VKsPYTtTifGvfsY4'
+      }
+    },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
