@@ -5,18 +5,17 @@ import menuStyle from "./menu.module.scss"
 
 const MenuPage = () => {
     const data = useStaticQuery(graphql`
-        query {
-            allMarkdownRemark{
+        query{
+            allContentfulMenuItem(sort: { 
+            fields: date,
+            order: DESC
+            })	{
                 edges{
                     node{
-                        frontmatter{
-                            title
-                            date
-                        }
-                        fields{
-                            slug
-                        }
-                    }
+                        title
+                        slug
+                        date(formatString:"Do MMMM, YYYY")
+                    } 
                 }
             }
         }
@@ -27,12 +26,12 @@ const MenuPage = () => {
             <Layout>
                 <h1>Menu</h1>
                 <ol className={menuStyle.recipes}>
-                    {data.allMarkdownRemark.edges.map((edge) => {
+                    {data.allContentfulMenuItem.edges.map((edge) => {
                         return (
                             <li className={menuStyle.recipe}>
-                                <Link to={`/menu/${edge.node.fields.slug}`}>
-                                    <h2>{edge.node.frontmatter.title}</h2>
-                                    <p>{edge.node.frontmatter.date}</p>
+                                <Link to={`/menu/${edge.node.slug}`}>
+                                    <h2>{edge.node.title}</h2>
+                                    <p>{edge.node.date}</p>
                                 </Link>
                             </li>
                         )
