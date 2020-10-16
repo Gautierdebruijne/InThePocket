@@ -3,10 +3,12 @@ title: "Appetizer"
 date: "15/10/2020"
 ---
 
-This is my first recipe!
+Salade Geitenkaas
+
+![Salade](./salade.jpg)
 
 ### Ingredients
 
-1. one
-2. two
+1. noten
+2. 
 3. three
