@@ -1,3 +1,4 @@
+const { create } = require('domain')
 const path = require('path')
 
 module.exports.onCreateNode = ({node, actions}) => {
@@ -12,4 +13,33 @@ module.exports.onCreateNode = ({node, actions}) => {
            value: slug
         })
      }
+}
+
+module.exports.createPages = async ({graphql, actions}) => {
+   const { createPage } = actions
+   const menuTemplate = path.resolve('./src/templates/menu.js')
+   const res = await graphql(`
+      query{
+         allMarkdownRemark{
+         edges{
+            node{
+               fields{
+               slug
+               }
+            }
+         }
+         }
+      }
+   `)
+
+   res.data.allMarkdownRemark.edges.forEach((edge) => {
+      createPage({
+         component: menuTemplate,
+         path: `/menu/${edge.node.fields.slug}`,
+         context: {
+            slug: edge.node.fields.slug
+         }
+      })
+   })
+
 }
