@@ -14,7 +14,7 @@ const MenuPage = () => {
                     node{
                         title
                         slug
-                        date(formatString:"Do MMMM, YYYY")
+                        date(formatString:"MMMM Do, YYYY")
                     } 
                 }
             }
